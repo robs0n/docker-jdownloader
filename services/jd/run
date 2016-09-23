@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "Starting JDownloader"
+if [ -z ${PUID+x} ]
+then
+  exec java -Djava.awt.headless=true -jar ${WORKDIR}/JDownloader.jar
+else
+  exec /sbin/setuser abc java -Djava.awt.headless=true -jar ${WORKDIR}/JDownloader.jar
+fi
